@@ -1,52 +1,193 @@
-from launch_ros.actions import Node
-from launch import LaunchDescription
-from launch.actions import ExecuteProcess
 import os
-import xacro
+from launch import LaunchDescription
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription, RegisterEventHandler
+from launch.event_handlers import OnProcessExit
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution, Command
+from launch_ros.actions import Node
+from launch.conditions import IfCondition
 from ament_index_python.packages import get_package_share_directory
-
+from launch_ros.parameter_descriptions import ParameterValue
 
 def generate_launch_description():
-    share_dir = get_package_share_directory('ssos_new_description')
-    xacro_file = os.path.join(share_dir, 'urdf', 'ssos_new.xacro')
+    pkg_ssos = get_package_share_directory('ssos_new_description')
 
-   
-    robot_description_config = xacro.process_file(xacro_file)
-    robot_urdf = robot_description_config.toxml()
-
+    # Set Gazebo model path
+    gazebo_models_path = os.path.join(pkg_ssos)
+    os.environ["GZ_SIM_RESOURCE_PATH"] = os.environ.get("GZ_SIM_RESOURCE_PATH", "") + os.pathsep + gazebo_models_path
     
-    gazebo_launch = ExecuteProcess(
-        cmd=['gz', 'sim', '-v', '4', '-r', '--headless-rendering', 'empty.sdf'],
-        output='screen'
+    earth_model_path = os.path.join(pkg_ssos, 'models')
+    os.environ["GZ_SIM_RESOURCE_PATH"] = os.environ.get("GZ_SIM_RESOURCE_PATH", "") + os.pathsep + earth_model_path
+
+    # Launch arguments
+    rviz_arg = DeclareLaunchArgument('rviz', default_value='false', description='Open RViz')
+    rviz_config_arg = DeclareLaunchArgument('rviz_config', default_value='urdf.rviz', description='RViz config file')
+    world_arg = DeclareLaunchArgument('world', default_value=PathJoinSubstitution([pkg_ssos, 'worlds', 'orbit.sdf']), description='Path to Gazebo world')
+    model_arg = DeclareLaunchArgument('model', default_value='ssos_new.xacro', description='URDF filename')
+    sim_time_arg = DeclareLaunchArgument('use_sim_time', default_value='true', description='Use simulation time')
+    controller_config_arg = DeclareLaunchArgument('controller', default_value=PathJoinSubstitution([pkg_ssos, 'config', 'controller.yaml']), description='Controller YAML path')
+
+    urdf_file_path = PathJoinSubstitution([pkg_ssos, "urdf", LaunchConfiguration('model')])
+
+    # Launch world
+    world_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(os.path.join(pkg_ssos, 'launch', 'world.launch.py')),
+        launch_arguments={'world': LaunchConfiguration('world')}.items()
     )
 
-    
+    # Robot description
     robot_state_publisher_node = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
         name='robot_state_publisher',
-        parameters=[{'robot_description': robot_urdf}]
+        output='screen',
+        parameters=[
+            {
+                'robot_description': ParameterValue(Command(['xacro', ' ', urdf_file_path]), value_type=str),
+                'use_sim_time': LaunchConfiguration('use_sim_time')
+            }
+        ]
     )
 
-   
-    joint_state_publisher_node = Node(
-        package='joint_state_publisher',
-        executable='joint_state_publisher',
-        name='joint_state_publisher',
-        condition=None  
+    # Spawn robot in Gazebo
+    spawn_urdf_node = Node(
+        package="ros_gz_sim",
+        executable="create",
+        arguments=["-name", "spacestation", "-topic", "robot_description", "-x", "0.0", "-y", "0.0", "-z", "0.085"],
+        output="screen",
+        parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}]
     )
 
-   
-    spawn_entity_node = Node(
-        package='ros_gz_sim',
-        executable='create',
-        arguments=['-name', 'ssos_new', '-topic', 'robot_description'],
+    # Bridge
+    gz_bridge_node = Node(
+        package="ros_gz_bridge",
+        executable="parameter_bridge",
+        arguments=[
+            "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock",
+            "/camera/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo",
+            "/camera/depth_image@sensor_msgs/msg/Image@gz.msgs.Image",
+            "/camera/depth/points@sensor_msgs/msg/PointCloud2@gz.msgs.PointCloudPacked",
+            "/lf_foot/contacts@gazebo_msgs/msg/ContactsState[gz.msgs.Contacts",
+            "/lh_foot/contacts@gazebo_msgs/msg/ContactsState[gz.msgs.Contacts",
+            "/rf_foot/contacts@gazebo_msgs/msg/ContactsState[gz.msgs.Contacts",
+            "/rh_foot/contacts@gazebo_msgs/msg/ContactsState[gz.msgs.Contacts",
+
+            # Rotor force bridges
+            "/model/husky/joint/front_left_blade_joint/cmd_force@std_msgs/msg/Float64@gz.msgs.Double",
+            "/model/husky/joint/front_right_blade_joint/cmd_force@std_msgs/msg/Float64@gz.msgs.Double",
+            "/model/husky/joint/rear_right_blade_joint/cmd_force@std_msgs/msg/Float64@gz.msgs.Double",
+            "/model/husky/joint/rear_left_blade_joint/cmd_force@std_msgs/msg/Float64@gz.msgs.Double",
+
+            # IMU
+            "/world/empty/model/husky/link/base/sensor/imu_sensor/imu@sensor_msgs/msg/Imu@gz.msgs.IMU",
+
+            # Odom & Pose
+            "/model/husky/odometry@nav_msgs/msg/Odometry@gz.msgs.Odometry",
+            "/model/husky/odometry_with_covariance@nav_msgs/msg/Odometry@gz.msgs.OdometryWithCovariance",
+            "/model/husky/pose@geometry_msgs/msg/PoseStamped@gz.msgs.Pose",
+
+            # Remaps
+            "--ros-args", "--remap",
+            "/model/husky/joint/front_left_blade_joint/cmd_force:=/fl/cmd_force",
+            "--remap",
+            "/model/husky/joint/front_right_blade_joint/cmd_force:=/fr/cmd_force",
+            "--remap",
+            "/model/husky/joint/rear_right_blade_joint/cmd_force:=/rr/cmd_force",
+            "--remap",
+            "/model/husky/joint/rear_left_blade_joint/cmd_force:=/rl/cmd_force",
+            "--remap",
+            "/world/empty/model/husky/link/base/sensor/imu_sensor/imu:=/imu",
+            "--remap",
+            "/model/husky/odometry:=/odom_raw",
+            "--remap",
+            "/model/husky/odometry_with_covariance:=/odom",
+            "--remap",
+            "/model/husky/pose:=/pose"
+        ],
+        output="screen",
+        parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}]
+    )
+
+    imu_state=Node(
+            package="controller_manager",
+            executable="spawner",
+            arguments=["imu_broadcaster"],
+        )
+    # Optional RViz
+    rviz_node = Node(
+        package='rviz2',
+        executable='rviz2',
+        arguments=['-d', PathJoinSubstitution([pkg_ssos, 'rviz', LaunchConfiguration('rviz_config')])],
+        condition=IfCondition(LaunchConfiguration('rviz')),
+        parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}]
+    )
+
+    # ros2_control manager
+    ros2_control_node = Node(
+        package='controller_manager',
+        executable='ros2_control_node',
+        parameters=[
+            LaunchConfiguration('controller'),
+            {'use_sim_time': LaunchConfiguration('use_sim_time')}
+        ],
         output='screen'
     )
 
+    # Joint state broadcaster
+    joint_state_broadcaster_spawner = Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=['joint_state_broadcaster'],
+        output='screen'
+    )
+
+    # Position controller spawner
+    position_controller_spawner = Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=['solar_controller'],
+        output='screen'
+    )
+    joint_trajectory_controller_spawner = Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=['joint_trajectory_controller'],
+        output='screen'
+    )
+
+    
+    
+
     return LaunchDescription([
-        gazebo_launch,
+        rviz_arg,
+        rviz_config_arg,
+        world_arg,
+        model_arg,
+        sim_time_arg,
+        controller_config_arg,
+        world_launch,
+        # gz_bridge_node,
+        rviz_node,
         robot_state_publisher_node,
-        joint_state_publisher_node,
-        spawn_entity_node,
+        spawn_urdf_node,
+        ros2_control_node,
+        # imu_state,
+        RegisterEventHandler(
+            event_handler=OnProcessExit(
+                target_action=spawn_urdf_node,
+                on_exit=[joint_state_broadcaster_spawner]
+            )
+        ),
+        RegisterEventHandler(
+            event_handler=OnProcessExit(
+                target_action=joint_state_broadcaster_spawner,
+                on_exit=[position_controller_spawner]
+            )
+        ),
+        # RegisterEventHandler(
+        #     event_handler=OnProcessExit(
+        #         target_action=position_controller_spawner,
+        #         on_exit=[pose_commander_node]
+        #     )
+        # )
     ])

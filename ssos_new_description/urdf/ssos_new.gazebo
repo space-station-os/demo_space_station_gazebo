@@ -1,11 +1,10 @@
 <?xml version="1.0" ?>
 <robot name="ssos_new" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
-<xacro:property name="body_color" value="Gazebo/Black" />
+<xacro:property name="body_color" value="Gazebo/White" />
+<xacro:property name="solar_panel" value="Gazebo/Blue" />
+<xacro:property name="thruster_panel" value="Gazebo/Black" />
 
-<gazebo>
-  <plugin name="control" filename="libgazebo_ros_control.so"/>
-</gazebo>
 <gazebo reference="base_link">
   <material>${body_color}</material>
   <mu1>100</mu1>
@@ -15,147 +14,147 @@
 </gazebo>
 
 <gazebo reference="MT_2_1">
-  <material>${body_color}</material>
+  <material>${thruster_panel}</material>
   <mu1>100</mu1>
   <mu2>100</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="MT_1_1">
-  <material>${body_color}</material>
+  <material>${thruster_panel}</material>
   <mu1>100</mu1>
   <mu2>100</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="MT_3_1">
-  <material>${body_color}</material>
+  <material>${thruster_panel}</material>
   <mu1>100</mu1>
   <mu2>100</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="LTTB_1">
-  <material>${body_color}</material>
+  <material>${thruster_panel}</material>
   <mu1>100</mu1>
   <mu2>100</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="LTTF_1">
-  <material>${body_color}</material>
+  <material>${thruster_panel}</material>
   <mu1>100</mu1>
   <mu2>100</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="LBTF_1">
-  <material>${body_color}</material>
+  <material>${thruster_panel}</material>
   <mu1>100</mu1>
   <mu2>100</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="LBTB_1">
-  <material>${body_color}</material>
+  <material>${thruster_panel}</material>
   <mu1>100</mu1>
   <mu2>100</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="L_panel_5_1">
-  <material>${body_color}</material>
+  <material>${solar_panel}</material>
   <mu1>100</mu1>
   <mu2>100</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="L_panel_4_1">
-  <material>${body_color}</material>
+  <material>${solar_panel}</material>
   <mu1>100</mu1>
   <mu2>100</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="L_panel_3_1">
-  <material>${body_color}</material>
+  <material>${solar_panel}</material>
   <mu1>100</mu1>
   <mu2>100</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="L_panel_2_1">
-  <material>${body_color}</material>
+  <material>${solar_panel}</material>
   <mu1>100</mu1>
   <mu2>100</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="L_panel_1_1">
-  <material>${body_color}</material>
+  <material>${solar_panel}</material>
   <mu1>100</mu1>
   <mu2>100</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="RTTF_1">
-  <material>${body_color}</material>
+  <material>${thruster_panel}</material>
   <mu1>100</mu1>
   <mu2>100</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="RTTB_1">
-  <material>${body_color}</material>
+  <material>${thruster_panel}</material>
   <mu1>100</mu1>
   <mu2>100</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="RBTB_1">
-  <material>${body_color}</material>
+  <material>${thruster_panel}</material>
   <mu1>100</mu1>
   <mu2>100</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="RBTF_1">
-  <material>${body_color}</material>
+  <material>${thruster_panel}</material>
   <mu1>100</mu1>
   <mu2>100</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="R_panel_1_1">
-  <material>${body_color}</material>
+  <material>${solar_panel}</material>
   <mu1>100</mu1>
   <mu2>100</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="R_panel_2_1">
-  <material>${body_color}</material>
+  <material>${solar_panel}</material>
   <mu1>100</mu1>
   <mu2>100</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="R_panel_3_1">
-  <material>${body_color}</material>
+  <material>${solar_panel}</material>
   <mu1>100</mu1>
   <mu2>100</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="R_panel_4_1">
-  <material>${body_color}</material>
+  <material>${solar_panel}</material>
   <mu1>100</mu1>
   <mu2>100</mu2>
   <self_collide>true</self_collide>
 </gazebo>
 
 <gazebo reference="R_panel_5_1">
-  <material>${body_color}</material>
+  <material>${solar_panel}</material>
   <mu1>100</mu1>
   <mu2>100</mu2>
   <self_collide>true</self_collide>
@@ -167,5 +166,77 @@
   <mu2>100</mu2>
   <self_collide>true</self_collide>
 </gazebo>
+
+<gazebo>
+  <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+    <parameters>$(find ssos_new_description)/config/controller.yaml</parameters>
+
+      <!-- Optional: specify controller manager node name -->
+    <controller_manager_prefix_node_name>controller_manager</controller_manager_prefix_node_name>
+
+  </plugin>
+</gazebo>
+
+<ros2_control name="GazeboSystem" type="system">
+  <hardware>
+    <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+      
+  </hardware>
+  <!-- Left Solar Array Joints -->
+  <joint name="l_sa_1">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="l_sa_2">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="l_sa_3">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="l_sa_4">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="l_sa_5">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+
+  <!-- Right Solar Array Joints -->
+  <joint name="r_sa_1">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="r_sa_2">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="r_sa_3">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="r_sa_4">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+  <joint name="r_sa_5">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+    <state_interface name="velocity"/>
+  </joint>
+</ros2_control>
+
+
 
 </robot>

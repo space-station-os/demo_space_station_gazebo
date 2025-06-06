@@ -1,0 +1,42 @@
+controller_manager:
+  ros__parameters:
+    use_sim_time: true
+    update_rate: 50
+
+    joint_state_broadcaster:
+      type: "joint_state_broadcaster/JointStateBroadcaster"
+
+    solar_controller:
+      type: "forward_command_controller/ForwardCommandController"
+
+joint_state_broadcaster:
+  ros__parameters:
+    joints:
+      - l_sa_1
+      - l_sa_2
+      - l_sa_3
+      - l_sa_4
+      - l_sa_5
+      - r_sa_1
+      - r_sa_2
+      - r_sa_3
+      - r_sa_4
+      - r_sa_5
+    interfaces:
+      - position
+      - velocity
+
+solar_controller:
+  ros__parameters:
+    joints:
+      - l_sa_1
+      - l_sa_2
+      - l_sa_3
+      - l_sa_4
+      - l_sa_5
+      - r_sa_1
+      - r_sa_2
+      - r_sa_3
+      - r_sa_4
+      - r_sa_5
+    interface_name: position
