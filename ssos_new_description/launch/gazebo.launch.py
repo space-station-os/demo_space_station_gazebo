@@ -64,45 +64,9 @@ def generate_launch_description():
         executable="parameter_bridge",
         arguments=[
             "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock",
-            "/camera/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo",
-            "/camera/depth_image@sensor_msgs/msg/Image@gz.msgs.Image",
-            "/camera/depth/points@sensor_msgs/msg/PointCloud2@gz.msgs.PointCloudPacked",
-            "/lf_foot/contacts@gazebo_msgs/msg/ContactsState[gz.msgs.Contacts",
-            "/lh_foot/contacts@gazebo_msgs/msg/ContactsState[gz.msgs.Contacts",
-            "/rf_foot/contacts@gazebo_msgs/msg/ContactsState[gz.msgs.Contacts",
-            "/rh_foot/contacts@gazebo_msgs/msg/ContactsState[gz.msgs.Contacts",
-
-            # Rotor force bridges
-            "/model/husky/joint/front_left_blade_joint/cmd_force@std_msgs/msg/Float64@gz.msgs.Double",
-            "/model/husky/joint/front_right_blade_joint/cmd_force@std_msgs/msg/Float64@gz.msgs.Double",
-            "/model/husky/joint/rear_right_blade_joint/cmd_force@std_msgs/msg/Float64@gz.msgs.Double",
-            "/model/husky/joint/rear_left_blade_joint/cmd_force@std_msgs/msg/Float64@gz.msgs.Double",
-
-            # IMU
-            "/world/empty/model/husky/link/base/sensor/imu_sensor/imu@sensor_msgs/msg/Imu@gz.msgs.IMU",
-
-            # Odom & Pose
-            "/model/husky/odometry@nav_msgs/msg/Odometry@gz.msgs.Odometry",
-            "/model/husky/odometry_with_covariance@nav_msgs/msg/Odometry@gz.msgs.OdometryWithCovariance",
-            "/model/husky/pose@geometry_msgs/msg/PoseStamped@gz.msgs.Pose",
-
-            # Remaps
-            "--ros-args", "--remap",
-            "/model/husky/joint/front_left_blade_joint/cmd_force:=/fl/cmd_force",
-            "--remap",
-            "/model/husky/joint/front_right_blade_joint/cmd_force:=/fr/cmd_force",
-            "--remap",
-            "/model/husky/joint/rear_right_blade_joint/cmd_force:=/rr/cmd_force",
-            "--remap",
-            "/model/husky/joint/rear_left_blade_joint/cmd_force:=/rl/cmd_force",
-            "--remap",
-            "/world/empty/model/husky/link/base/sensor/imu_sensor/imu:=/imu",
-            "--remap",
-            "/model/husky/odometry:=/odom_raw",
-            "--remap",
-            "/model/husky/odometry_with_covariance:=/odom",
-            "--remap",
-            "/model/husky/pose:=/pose"
+            "/spacestation/command/duty_cycle@actuator_msgs/msg/Actuators[gz.msgs.Actuators"
+            
+            
         ],
         output="screen",
         parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}]
@@ -166,7 +130,7 @@ def generate_launch_description():
         sim_time_arg,
         controller_config_arg,
         world_launch,
-        # gz_bridge_node,
+        gz_bridge_node,
         rviz_node,
         robot_state_publisher_node,
         spawn_urdf_node,
