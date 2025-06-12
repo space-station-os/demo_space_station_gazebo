@@ -238,114 +238,268 @@
   </ros2_control>
 
 
-  <gazebo>
+  <!-- <gazebo>
     <plugin filename="gz-sim-spacecraft-thruster-model-system" name="gz::sim::systems::SpacecraftThrusterModel">
-      <link_name>MT_2_1</link_name>
+      <link_name>MT_1_1</link_name>
       <actuator_number>0</actuator_number>
       <duty_cycle_frequency>10</duty_cycle_frequency>
-      <max_thrust>10.4</max_thrust>
+      <max_thrust>114.4</max_thrust>
       <sub_topic>command/duty_cycle</sub_topic>
+    </plugin>
+  </gazebo> -->
+  <gazebo>
+    <plugin filename="gz-sim-thruster-system" name="gz::sim::systems::Thruster">
+      <joint_name>bl_th</joint_name>
+      <thrust_coefficient>0.004</thrust_coefficient>
+      <fluid_density>1000</fluid_density>
+      <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>300</max_thrust_cmd>
+      <min_thrust_cmd>0</min_thrust_cmd>
     </plugin>
   </gazebo>
 
   <gazebo>
-    <plugin filename="gz-sim-spacecraft-thruster-model-system" name="gz::sim::systems::SpacecraftThrusterModel">
-      <link_name>base_link</link_name>
-      <actuator_number>1</actuator_number>
-      <duty_cycle_frequency>10</duty_cycle_frequency>
-      <max_thrust>10.4</max_thrust>
-      <sub_topic>command/duty_cycle</sub_topic>
+    <plugin filename="gz-sim-thruster-system" name="gz::sim::systems::Thruster">
+      <joint_name>br_th</joint_name>
+      <thrust_coefficient>0.004</thrust_coefficient>
+      <fluid_density>1000</fluid_density>
+      <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>300</max_thrust_cmd>
+      <min_thrust_cmd>0</min_thrust_cmd>
     </plugin>
   </gazebo>
 
   <gazebo>
-    <plugin filename="gz-sim-spacecraft-thruster-model-system" name="gz::sim::systems::SpacecraftThrusterModel">
-      <link_name>MT_3_1</link_name>
-      <actuator_number>2</actuator_number>
-      <duty_cycle_frequency>10</duty_cycle_frequency>
-      <max_thrust>10.4</max_thrust>
-      <sub_topic>command/duty_cycle</sub_topic>
+    <plugin filename="gz-sim-thruster-system" name="gz::sim::systems::Thruster">
+      <joint_name>bb_th</joint_name>
+      <thrust_coefficient>0.004</thrust_coefficient>
+      <fluid_density>1000</fluid_density>
+      <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>300</max_thrust_cmd>
+      <min_thrust_cmd>0</min_thrust_cmd>
     </plugin>
   </gazebo>
 
   <gazebo>
-    <plugin filename="gz-sim-spacecraft-thruster-model-system" name="gz::sim::systems::SpacecraftThrusterModel">
-      <link_name>LTTB_1</link_name>
-      <actuator_number>3</actuator_number>
-      <duty_cycle_frequency>10</duty_cycle_frequency>
-      <max_thrust>10.4</max_thrust>
-      <sub_topic>command/duty_cycle</sub_topic>
+    <plugin filename="gz-sim-thruster-system" name="gz::sim::systems::Thruster">
+      <joint_name>lth_tb</joint_name>
+      <thrust_coefficient>0.004</thrust_coefficient>
+      <fluid_density>1000</fluid_density>
+      <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>300</max_thrust_cmd>
+      <min_thrust_cmd>0</min_thrust_cmd>
     </plugin>
   </gazebo>
 
   <gazebo>
-    <plugin filename="gz-sim-spacecraft-thruster-model-system" name="gz::sim::systems::SpacecraftThrusterModel">
-      <link_name>LTTF_1</link_name>
-      <actuator_number>4</actuator_number>
-      <duty_cycle_frequency>10</duty_cycle_frequency>
-      <max_thrust>10.4</max_thrust>
-      <sub_topic>command/duty_cycle</sub_topic>
+    <plugin filename="gz-sim-thruster-system" name="gz::sim::systems::Thruster">
+      <joint_name>lth_tf</joint_name>
+      <thrust_coefficient>0.004</thrust_coefficient>
+      <fluid_density>1000</fluid_density>
+      <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>300</max_thrust_cmd>
+      <min_thrust_cmd>0</min_thrust_cmd>
     </plugin>
   </gazebo>
 
   <gazebo>
-    <plugin filename="gz-sim-spacecraft-thruster-model-system" name="gz::sim::systems::SpacecraftThrusterModel">
-      <link_name>LBTB_1</link_name>
-      <actuator_number>5</actuator_number>
-      <duty_cycle_frequency>10</duty_cycle_frequency>
-      <max_thrust>10.4</max_thrust>
-      <sub_topic>command/duty_cycle</sub_topic>
+    <plugin filename="gz-sim-thruster-system" name="gz::sim::systems::Thruster">
+      <joint_name>lth_bf</joint_name>
+      <thrust_coefficient>0.004</thrust_coefficient>
+      <fluid_density>1000</fluid_density>
+      <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>300</max_thrust_cmd>
+      <min_thrust_cmd>0</min_thrust_cmd>
     </plugin>
   </gazebo>
 
   <gazebo>
-    <plugin filename="gz-sim-spacecraft-thruster-model-system" name="gz::sim::systems::SpacecraftThrusterModel">
-      <link_name>LBTF_1</link_name>
-      <actuator_number>6</actuator_number>
-      <duty_cycle_frequency>10</duty_cycle_frequency>
-      <max_thrust>10.4</max_thrust>
-      <sub_topic>command/duty_cycle</sub_topic>
+    <plugin filename="gz-sim-thruster-system" name="gz::sim::systems::Thruster">
+      <joint_name>lth_bb</joint_name>
+      <thrust_coefficient>0.004</thrust_coefficient>
+      <fluid_density>1000</fluid_density>
+      <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>300</max_thrust_cmd>
+      <min_thrust_cmd>0</min_thrust_cmd>
     </plugin>
   </gazebo>
 
   <gazebo>
-    <plugin filename="gz-sim-spacecraft-thruster-model-system" name="gz::sim::systems::SpacecraftThrusterModel">
-      <link_name>RTTB_1</link_name>
-      <actuator_number>7</actuator_number>
-      <duty_cycle_frequency>10</duty_cycle_frequency>
-      <max_thrust>10.4</max_thrust>
-      <sub_topic>command/duty_cycle</sub_topic>
+    <plugin filename="gz-sim-thruster-system" name="gz::sim::systems::Thruster">
+      <joint_name>rth_tb</joint_name>
+      <thrust_coefficient>0.004</thrust_coefficient>
+      <fluid_density>1000</fluid_density>
+      <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>300</max_thrust_cmd>
+      <min_thrust_cmd>0</min_thrust_cmd>
     </plugin>
   </gazebo>
 
   <gazebo>
-    <plugin filename="gz-sim-spacecraft-thruster-model-system" name="gz::sim::systems::SpacecraftThrusterModel">
-      <link_name>RTTF_1</link_name>
-      <actuator_number>8</actuator_number>
-      <duty_cycle_frequency>10</duty_cycle_frequency>
-      <max_thrust>10.4</max_thrust>
-      <sub_topic>command/duty_cycle</sub_topic>
+    <plugin filename="gz-sim-thruster-system" name="gz::sim::systems::Thruster">
+      <joint_name>rth_tf</joint_name>
+      <thrust_coefficient>0.004</thrust_coefficient>
+      <fluid_density>1000</fluid_density>
+      <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>300</max_thrust_cmd>
+      <min_thrust_cmd>0</min_thrust_cmd>
     </plugin>
   </gazebo>
 
   <gazebo>
-    <plugin filename="gz-sim-spacecraft-thruster-model-system" name="gz::sim::systems::SpacecraftThrusterModel">
-      <link_name>RBTB_1</link_name>
-      <actuator_number>9</actuator_number>
-      <duty_cycle_frequency>10</duty_cycle_frequency>
-      <max_thrust>10.4</max_thrust>
-      <sub_topic>command/duty_cycle</sub_topic>
+    <plugin filename="gz-sim-thruster-system" name="gz::sim::systems::Thruster">
+      <joint_name>rth_bb</joint_name>
+      <thrust_coefficient>0.004</thrust_coefficient>
+      <fluid_density>1000</fluid_density>
+      <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>300</max_thrust_cmd>
+      <min_thrust_cmd>0</min_thrust_cmd>
     </plugin>
   </gazebo>
 
   <gazebo>
-    <plugin filename="gz-sim-spacecraft-thruster-model-system" name="gz::sim::systems::SpacecraftThrusterModel">
-      <link_name>RBTF_1</link_name>
-      <actuator_number>11</actuator_number>
-      <duty_cycle_frequency>10</duty_cycle_frequency>
-      <max_thrust>10.4</max_thrust>
-      <sub_topic>command/duty_cycle</sub_topic>
+    <plugin filename="gz-sim-thruster-system" name="gz::sim::systems::Thruster">
+      <joint_name>rth_bf</joint_name>
+      <thrust_coefficient>0.004</thrust_coefficient>
+      <fluid_density>1000</fluid_density>
+      <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>300</max_thrust_cmd>
+      <min_thrust_cmd>0</min_thrust_cmd>
     </plugin>
+  </gazebo>
+
+  <!-- Additional cameras, IMU, and GPS -->
+
+  <gazebo reference="front_camera_link">
+    <sensor name="camera_front" type="camera">
+      <camera>
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.1</near>
+          <far>15</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+        <optical_frame_id>front_camera_link_optical</optical_frame_id>
+        <camera_info_topic>front_camera/camera_info</camera_info_topic>
+      </camera>
+      <always_on>1</always_on>
+      <update_rate>20</update_rate>
+      <visualize>true</visualize>
+      <topic>front_camera/image</topic>
+    </sensor>
+  </gazebo>
+
+  <gazebo reference="mt1_camera_link">
+    <sensor name="camera_mt1" type="camera">
+      <camera>
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.1</near>
+          <far>15</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+        <optical_frame_id>mt1_camera_link_optical</optical_frame_id>
+        <camera_info_topic>mt1_camera/camera_info</camera_info_topic>
+      </camera>
+      <always_on>1</always_on>
+      <update_rate>20</update_rate>
+      <visualize>true</visualize>
+      <topic>mt1_camera/image</topic>
+    </sensor>
+  </gazebo>
+
+  <gazebo reference="solar_r3_camera_link">
+    <sensor name="camera_solar_r3" type="camera">
+      <camera>
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.1</near>
+          <far>15</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+        <optical_frame_id>solar_r3_camera_link_optical</optical_frame_id>
+        <camera_info_topic>solar_r3_camera/camera_info</camera_info_topic>
+      </camera>
+      <always_on>1</always_on>
+      <update_rate>20</update_rate>
+      <visualize>true</visualize>
+      <topic>solar_r3_camera/image</topic>
+    </sensor>
+  </gazebo>
+
+  <gazebo reference="solar_l3_camera_link">
+    <sensor name="camera_solar_l3" type="camera">
+      <camera>
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.1</near>
+          <far>15</far>
+        </clip>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.007</stddev>
+        </noise>
+        <optical_frame_id>solar_l3_camera_link_optical</optical_frame_id>
+        <camera_info_topic>solar_l3_camera/camera_info</camera_info_topic>
+      </camera>
+      <always_on>1</always_on>
+      <update_rate>20</update_rate>
+      <visualize>true</visualize>
+      <topic>solar_l3_camera/image</topic>
+    </sensor>
+  </gazebo>
+
+  <gazebo reference="imu_link">
+    <sensor name="imu" type="imu">
+      <always_on>1</always_on>
+      <update_rate>50</update_rate>
+      <visualize>true</visualize>
+      <topic>imu</topic>
+      <enable_metrics>true</enable_metrics>
+      <gz_frame_id>imu_link</gz_frame_id>
+    </sensor>
+  </gazebo>
+
+  <gazebo reference="navsat_link">
+    <sensor name="navsat" type="navsat">
+      <always_on>1</always_on>
+      <update_rate>1</update_rate>
+      <topic>navsat</topic>
+      <gz_frame_id>navsat_link</gz_frame_id>
+    </sensor>
   </gazebo>
 
 

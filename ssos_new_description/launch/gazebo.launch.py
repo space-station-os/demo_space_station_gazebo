@@ -59,17 +59,14 @@ def generate_launch_description():
     )
 
     # Bridge
-    gz_bridge_node = Node(
-        package="ros_gz_bridge",
-        executable="parameter_bridge",
-        arguments=[
-            "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock",
-            "/spacestation/command/duty_cycle@actuator_msgs/msg/Actuators[gz.msgs.Actuators"
-            
-            
-        ],
-        output="screen",
-        parameters=[{'use_sim_time': LaunchConfiguration('use_sim_time')}]
+    gz_bridge_node =Node(
+        package='ros_gz_bridge',
+        executable='parameter_bridge',
+        parameters=[{
+            'config_file': os.path.join(pkg_ssos, 'config', 'bridge.yaml'),
+            'qos_overrides./tf_static.publisher.durability': 'transient_local',
+        }],
+        output='screen'
     )
 
     imu_state=Node(

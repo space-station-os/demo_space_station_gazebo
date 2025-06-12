@@ -641,4 +641,103 @@
   <axis xyz="-1.0 0.0 0.0"/>
 </joint>
 
+
+
+<!-- Additional cameras, IMU, and GPS -->
+<!-- 1. Camera in front of space station -->
+<joint type="fixed" name="front_camera_joint">
+  <origin xyz="0.673495 5.9 0.4" rpy="0 0 1.57"/>
+  <parent link="base_link"/>
+  <child link="front_camera_link"/>
+</joint>
+<link name="front_camera_link">
+  <inertial>
+    <mass value="0.1"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" iyz="0" ixz="0"/>
+  </inertial>
+  <visual>
+    <geometry><box size="0.03 0.03 0.03"/></geometry>
+  </visual>
+  <collision>
+    <geometry><box size="0.03 0.03 0.03"/></geometry>
+  </collision>
+</link>
+
+<!-- 2. Camera near MT_1_1 -->
+<joint type="fixed" name="mt1_camera_joint">
+  <origin xyz="0.0 -0.01 0.6" rpy="0 0 -1.57"/>
+  <parent link="base_link"/>
+  <child link="mt1_camera_link"/>
+</joint>
+<link name="mt1_camera_link">
+  <inertial>
+    <mass value="0.1"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" iyz="0" ixz="0"/>
+  </inertial>
+  <visual>
+    <geometry><box size="0.03 0.03 0.03"/></geometry>
+  </visual>
+  <collision>
+    <geometry><box size="0.03 0.03 0.03"/></geometry>
+  </collision>
+</link>
+
+<!-- 3. Camera right of 3rd solar array joint -->
+<joint type="fixed" name="solar_r3_camera_joint">
+  <origin xyz="-1.125 2.500262 1.0" rpy="0 0 3.14"/>
+  <parent link="base_link"/>
+  <child link="solar_r3_camera_link"/>
+</joint>
+<link name="solar_r3_camera_link">
+  <inertial>
+    <mass value="0.1"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" iyz="0" ixz="0"/>
+  </inertial>
+  <visual>
+    <geometry><box size="0.03 0.03 0.03"/></geometry>
+  </visual>
+  <collision>
+    <geometry><box size="0.03 0.03 0.03"/></geometry>
+  </collision>
+</link>
+
+<!-- 4. Camera left of 3rd solar array joint -->
+<joint type="fixed" name="solar_l3_camera_joint">
+  <origin xyz="1.125 2.500262 1.0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="solar_l3_camera_link"/>
+</joint>
+<link name="solar_l3_camera_link">
+  <inertial>
+    <mass value="0.1"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" iyz="0" ixz="0"/>
+  </inertial>
+  <visual>
+    <geometry><box size="0.03 0.03 0.03"/></geometry>
+  </visual>
+  <collision>
+    <geometry><box size="0.03 0.03 0.03"/></geometry>
+  </collision>
+</link>
+
+<!-- IMU sensor -->
+<joint name="imu_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="imu_link"/>
+</joint>
+<link name="imu_link"/>
+
+<!-- GPS sensor -->
+<joint name="navsat_joint" type="fixed">
+  <origin xyz="0 0 0" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="navsat_link"/>
+</joint>
+<link name="navsat_link"/>
+
 </robot>
