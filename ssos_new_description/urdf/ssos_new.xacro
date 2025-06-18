@@ -491,28 +491,28 @@
   <origin xyz="0.551703 -0.01 0.598446" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="MT_2_1"/>
-  <axis xyz="0.0 -1.0 0.0"/>
+  <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
 <joint name="br_th" type="continuous">
   <origin xyz="-0.550421 -0.01 0.594304" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="MT_1_1"/>
-  <axis xyz="0.0 -1.0 0.0"/>
+  <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
 <joint name="bb_th" type="continuous">
   <origin xyz="0.000773 -0.01 -0.803127" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="MT_3_1"/>
-  <axis xyz="0.0 -1.0 0.0"/>
+  <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
 <joint name="docking" type="continuous">
   <origin xyz="0.0 -0.01 0.0" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="docking_port_1"/>
-  <axis xyz="0.0 -1.0 0.0"/>
+  <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
 <joint name="lth_tb" type="continuous">
@@ -677,16 +677,16 @@
     <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" iyz="0" ixz="0"/>
   </inertial>
   <visual>
-    <geometry><box size="0.03 0.03 0.03"/></geometry>
+    <geometry><box size="0.03 0.3 0.03"/></geometry>
   </visual>
   <collision>
-    <geometry><box size="0.03 0.03 0.03"/></geometry>
+    <geometry><box size="0.03 0.3 0.03"/></geometry>
   </collision>
 </link>
 
 <!-- 3. Camera right of 3rd solar array joint -->
 <joint type="fixed" name="solar_r3_camera_joint">
-  <origin xyz="-1.125 2.500262 1.0" rpy="0 0 3.14"/>
+  <origin xyz="-0.904613 2.5 0.626338" rpy="0 0 3.14 "/>
   <parent link="base_link"/>
   <child link="solar_r3_camera_link"/>
 </joint>
@@ -697,16 +697,16 @@
     <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" iyz="0" ixz="0"/>
   </inertial>
   <visual>
-    <geometry><box size="0.03 0.03 0.03"/></geometry>
+    <geometry><box size="0.03 0.3 0.03"/></geometry>
   </visual>
   <collision>
-    <geometry><box size="0.03 0.03 0.03"/></geometry>
+    <geometry><box size="0.03 0.3 0.03"/></geometry>
   </collision>
 </link>
 
 <!-- 4. Camera left of 3rd solar array joint -->
 <joint type="fixed" name="solar_l3_camera_joint">
-  <origin xyz="1.125 2.500262 1.0" rpy="0 0 0"/>
+  <origin xyz="0.904613 2.5 0.626338" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="solar_l3_camera_link"/>
 </joint>
@@ -717,10 +717,10 @@
     <inertia ixx="1e-6" iyy="1e-6" izz="1e-6" ixy="0" iyz="0" ixz="0"/>
   </inertial>
   <visual>
-    <geometry><box size="0.03 0.03 0.03"/></geometry>
+    <geometry><box size="0.03 0.3 0.03"/></geometry>
   </visual>
   <collision>
-    <geometry><box size="0.03 0.03 0.03"/></geometry>
+    <geometry><box size="0.03 0.3 0.03"/></geometry>
   </collision>
 </link>
 

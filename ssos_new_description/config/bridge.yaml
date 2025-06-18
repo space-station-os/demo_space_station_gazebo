@@ -1,70 +1,70 @@
 ---
 # Thruster joint commands (12)
-- ros_topic_name: "/spacestation/thrust/MT_1_1"
-  gz_topic_name: "/model/spacestation/joint/MT_1_1_joint/cmd_thrust"
+- ros_topic_name: "/spacestation/thrust/bb_th"
+  gz_topic_name: "/model/spacestation/joint/bb_th/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: BIDIRECTIONAL
 
-- ros_topic_name: "/spacestation/thrust/MT_2_1"
-  gz_topic_name: "/model/spacestation/joint/MT_2_1_joint/cmd_thrust"
+- ros_topic_name: "/spacestation/thrust/bl_th"
+  gz_topic_name: "/model/spacestation/joint/bl_th/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: BIDIRECTIONAL
 
-- ros_topic_name: "/spacestation/thrust/MT_3_1"
-  gz_topic_name: "/model/spacestation/joint/MT_3_1_joint/cmd_thrust"
+- ros_topic_name: "/spacestation/thrust/br_th"
+  gz_topic_name: "/model/spacestation/joint/br_th/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: BIDIRECTIONAL
 
-- ros_topic_name: "/spacestation/thrust/LTTB_1"
-  gz_topic_name: "/model/spacestation/joint/LTTB_1_joint/cmd_thrust"
+- ros_topic_name: "/spacestation/thrust/lth_bb"
+  gz_topic_name: "/model/spacestation/joint/lth_bb/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: BIDIRECTIONAL
 
-- ros_topic_name: "/spacestation/thrust/LTTF_1"
-  gz_topic_name: "/model/spacestation/joint/LTTF_1_joint/cmd_thrust"
+- ros_topic_name: "/spacestation/thrust/lth_bf"
+  gz_topic_name: "/model/spacestation/joint/lth_bf/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: BIDIRECTIONAL
 
-- ros_topic_name: "/spacestation/thrust/LBTB_1"
-  gz_topic_name: "/model/spacestation/joint/LBTB_1_joint/cmd_thrust"
+- ros_topic_name: "/spacestation/thrust/lth_tb"
+  gz_topic_name: "/model/spacestation/joint/lth_tb/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: BIDIRECTIONAL
 
-- ros_topic_name: "/spacestation/thrust/LBTF_1"
-  gz_topic_name: "/model/spacestation/joint/LBTF_1_joint/cmd_thrust"
+- ros_topic_name: "/spacestation/thrust/lth_tf"
+  gz_topic_name: "/model/spacestation/joint/lth_tf/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: BIDIRECTIONAL
 
-- ros_topic_name: "/spacestation/thrust/RTTB_1"
-  gz_topic_name: "/model/spacestation/joint/RTTB_1_joint/cmd_thrust"
+- ros_topic_name: "/spacestation/thrust/rth_bb"
+  gz_topic_name: "/model/spacestation/joint/rth_bb/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: BIDIRECTIONAL
 
-- ros_topic_name: "/spacestation/thrust/RTTF_1"
-  gz_topic_name: "/model/spacestation/joint/RTTF_1_joint/cmd_thrust"
+- ros_topic_name: "/spacestation/thrust/rth_bf"
+  gz_topic_name: "/model/spacestation/joint/rth_bf/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: BIDIRECTIONAL
 
-- ros_topic_name: "/spacestation/thrust/RBTB_1"
-  gz_topic_name: "/model/spacestation/joint/RBTB_1_joint/cmd_thrust"
+- ros_topic_name: "/spacestation/thrust/rth_tb"
+  gz_topic_name: "/model/spacestation/joint/rth_tb/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: BIDIRECTIONAL
 
-- ros_topic_name: "/spacestation/thrust/RBTF_1"
-  gz_topic_name: "/model/spacestation/joint/RBTF_1_joint/cmd_thrust"
+- ros_topic_name: "/spacestation/thrust/rth_tf"
+  gz_topic_name: "/model/spacestation/joint/rth_tf/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
-  direction: ROS_TO_GZ
+  direction: BIDIRECTIONAL
 
 # IMU sensor
 - ros_topic_name: "/imu"
