@@ -17,3 +17,13 @@ ros2 launch ssos_new_description gazebo.launch.py
 ```bash
 export GZ_SIM_RESOURCE_PATH=$HOME/ssos_ws/src/ssos_new_description/urdf:$HOME/ssos_ws/src/ssos_new_description/meshes:${GZ_SIM_RESOURCE_PATH}
 ```
+
+
+To run the teleop 
+
+```bash
+ros2 run space_station_control teleop   
+ros2 run space_station_control mux 
+```
+
+Please run both nodes in a dedicated terminal or using tmux 
