@@ -37,11 +37,11 @@ void MuxNode::command_callback(const space_station_control::msg::ThrustersCmd::S
   if (dir == "forward") {
     active_thrusters = { "bl_th", "bb_th", "br_th" };
   } else if (dir == "backward") {
-    active_thrusters = { "lth_bb", "rth_bb" };
+    active_thrusters = { "bl_th", "bb_th", "br_th" };
   } else if (dir == "up") {
-    active_thrusters = { "lth_tf", "rth_tf", "rth_bf", "lth_bf" };
+    active_thrusters = { "lth_bf", "rth_bf", "rth_bb", "lth_bb" };
   } else if (dir == "down") {
-    active_thrusters = { "lth_tb", "rth_tb", "rth_tf", "lth_tf" };
+    active_thrusters = { "lth_tf", "rth_tf", "rth_bt", "lth_bf" };
   } else if (dir == "yaw_left") {
     active_thrusters = { "rth_tf", "rth_bf", "rth_tb", "rth_tf" };
   } else if (dir == "yaw_right") {
@@ -51,7 +51,7 @@ void MuxNode::command_callback(const space_station_control::msg::ThrustersCmd::S
   } else if (dir == "right") {
     active_thrusters = { "br_th" };
   } else if (dir == "halt") {
-    // already zeroed out all thrusters above
+    
     RCLCPP_INFO(this->get_logger(), "Halting all thrusters.");
     return;
   } else {
