@@ -1,67 +1,96 @@
----
-# Thruster joint commands (12)
-- ros_topic_name: "/spacestation/thrust/bb_th"
-  gz_topic_name: "/model/spacestation/joint/bb_th/cmd_thrust"
+# Thruster joint commands (12 total)
+- ros_topic_name: "/spacestation/thrust/xp_th_1"
+  gz_topic_name: "/model/spacestation/joint/xp_th_1/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: BIDIRECTIONAL
 
-- ros_topic_name: "/spacestation/thrust/bl_th"
-  gz_topic_name: "/model/spacestation/joint/bl_th/cmd_thrust"
+- ros_topic_name: "/spacestation/thrust/xp_th_2"
+  gz_topic_name: "/model/spacestation/joint/xp_th_2/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: BIDIRECTIONAL
 
-- ros_topic_name: "/spacestation/thrust/br_th"
-  gz_topic_name: "/model/spacestation/joint/br_th/cmd_thrust"
+- ros_topic_name: "/spacestation/thrust/xp_th_3"
+  gz_topic_name: "/model/spacestation/joint/xp_th_3/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: BIDIRECTIONAL
 
-- ros_topic_name: "/spacestation/thrust/lth_bb"
-  gz_topic_name: "/model/spacestation/joint/lth_bb/cmd_thrust"
+- ros_topic_name: "/spacestation/thrust/xp_th_4"
+  gz_topic_name: "/model/spacestation/joint/xp_th_4/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: BIDIRECTIONAL
 
-- ros_topic_name: "/spacestation/thrust/lth_bf"
-  gz_topic_name: "/model/spacestation/joint/lth_bf/cmd_thrust"
+- ros_topic_name: "/spacestation/thrust/xn_th_1"
+  gz_topic_name: "/model/spacestation/joint/xn_th_1/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: BIDIRECTIONAL
 
-- ros_topic_name: "/spacestation/thrust/lth_tb"
-  gz_topic_name: "/model/spacestation/joint/lth_tb/cmd_thrust"
+- ros_topic_name: "/spacestation/thrust/xn_th_2"
+  gz_topic_name: "/model/spacestation/joint/xn_th_2/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: BIDIRECTIONAL
 
-- ros_topic_name: "/spacestation/thrust/lth_tf"
-  gz_topic_name: "/model/spacestation/joint/lth_tf/cmd_thrust"
+- ros_topic_name: "/spacestation/thrust/xn_th_3"
+  gz_topic_name: "/model/spacestation/joint/xn_th_3/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: BIDIRECTIONAL
 
-- ros_topic_name: "/spacestation/thrust/rth_bb"
-  gz_topic_name: "/model/spacestation/joint/rth_bb/cmd_thrust"
+- ros_topic_name: "/spacestation/thrust/xn_th_4"
+  gz_topic_name: "/model/spacestation/joint/xn_th_4/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: BIDIRECTIONAL
 
-- ros_topic_name: "/spacestation/thrust/rth_bf"
-  gz_topic_name: "/model/spacestation/joint/rth_bf/cmd_thrust"
+- ros_topic_name: "/spacestation/thrust/yp_th_1"
+  gz_topic_name: "/model/spacestation/joint/yp_th_1/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: BIDIRECTIONAL
 
-- ros_topic_name: "/spacestation/thrust/rth_tb"
-  gz_topic_name: "/model/spacestation/joint/rth_tb/cmd_thrust"
+- ros_topic_name: "/spacestation/thrust/yp_th_2"
+  gz_topic_name: "/model/spacestation/joint/yp_th_2/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: BIDIRECTIONAL
 
-- ros_topic_name: "/spacestation/thrust/rth_tf"
-  gz_topic_name: "/model/spacestation/joint/rth_tf/cmd_thrust"
+- ros_topic_name: "/spacestation/thrust/yn_th_1"
+  gz_topic_name: "/model/spacestation/joint/yn_th_1/cmd_thrust"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: BIDIRECTIONAL
+
+- ros_topic_name: "/spacestation/thrust/yn_th_2"
+  gz_topic_name: "/model/spacestation/joint/yn_th_2/cmd_thrust"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: BIDIRECTIONAL
+
+- ros_topic_name: "/spacestation/thrust/zp_th_1"
+  gz_topic_name: "/model/spacestation/joint/zp_th_1/cmd_thrust"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: BIDIRECTIONAL
+
+- ros_topic_name: "/spacestation/thrust/zp_th_2"
+  gz_topic_name: "/model/spacestation/joint/zp_th_2/cmd_thrust"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: BIDIRECTIONAL
+
+- ros_topic_name: "/spacestation/thrust/zn_th_1"
+  gz_topic_name: "/model/spacestation/joint/zn_th_1/cmd_thrust"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: BIDIRECTIONAL
+
+- ros_topic_name: "/spacestation/thrust/zn_th_2"
+  gz_topic_name: "/model/spacestation/joint/zn_th_2/cmd_thrust"
   ros_type_name: "std_msgs/msg/Float64"
   gz_type_name: "gz.msgs.Double"
   direction: BIDIRECTIONAL
@@ -80,7 +109,14 @@
   gz_type_name: "gz.msgs.NavSat"
   direction: GZ_TO_ROS
 
-# Cameras (4 total)
+# Clock sync
+- ros_topic_name: "/clock"
+  gz_topic_name: "/clock"
+  ros_type_name: "rosgraph_msgs/msg/Clock"
+  gz_type_name: "gz.msgs.Clock"
+  direction: GZ_TO_ROS
+
+# Cameras (4 primary)
 - ros_topic_name: "/front_camera/image"
   gz_topic_name: "/front_camera/image"
   ros_type_name: "sensor_msgs/msg/Image"
@@ -93,45 +129,39 @@
   gz_type_name: "gz.msgs.CameraInfo"
   direction: GZ_TO_ROS
 
-- ros_topic_name: "/mt1_camera/image"
-  gz_topic_name: "/mt1_camera/image"
+- ros_topic_name: "/back_camera/image"
+  gz_topic_name: "/back_camera/image"
   ros_type_name: "sensor_msgs/msg/Image"
   gz_type_name: "gz.msgs.Image"
   direction: GZ_TO_ROS
 
-- ros_topic_name: "/mt1_camera/camera_info"
-  gz_topic_name: "/mt1_camera/camera_info"
+- ros_topic_name: "/back_camera/camera_info"
+  gz_topic_name: "/back_camera/camera_info"
   ros_type_name: "sensor_msgs/msg/CameraInfo"
   gz_type_name: "gz.msgs.CameraInfo"
   direction: GZ_TO_ROS
 
-- ros_topic_name: "/solar_r3_camera/image"
-  gz_topic_name: "/solar_r3_camera/image"
+- ros_topic_name: "/left_camera/image"
+  gz_topic_name: "/left_camera/image"
   ros_type_name: "sensor_msgs/msg/Image"
   gz_type_name: "gz.msgs.Image"
   direction: GZ_TO_ROS
 
-- ros_topic_name: "/solar_r3_camera/camera_info"
-  gz_topic_name: "/solar_r3_camera/camera_info"
+- ros_topic_name: "/left_camera/camera_info"
+  gz_topic_name: "/left_camera/camera_info"
   ros_type_name: "sensor_msgs/msg/CameraInfo"
   gz_type_name: "gz.msgs.CameraInfo"
   direction: GZ_TO_ROS
 
-- ros_topic_name: "/solar_l3_camera/image"
-  gz_topic_name: "/solar_l3_camera/image"
+- ros_topic_name: "/right_camera/image"
+  gz_topic_name: "/right_camera/image"
   ros_type_name: "sensor_msgs/msg/Image"
   gz_type_name: "gz.msgs.Image"
   direction: GZ_TO_ROS
 
-- ros_topic_name: "/solar_l3_camera/camera_info"
-  gz_topic_name: "/solar_l3_camera/camera_info"
+- ros_topic_name: "/right_camera/camera_info"
+  gz_topic_name: "/right_camera/camera_info"
   ros_type_name: "sensor_msgs/msg/CameraInfo"
   gz_type_name: "gz.msgs.CameraInfo"
   direction: GZ_TO_ROS
 
-# Clock
-- ros_topic_name: "/clock"
-  gz_topic_name: "/clock"
-  ros_type_name: "rosgraph_msgs/msg/Clock"
-  gz_type_name: "gz.msgs.Clock"
-  direction: GZ_TO_ROS

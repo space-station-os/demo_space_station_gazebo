@@ -68,11 +68,11 @@ void TeleopNode::input_loop() {
     c = getchar();
 
     auto msg = ThrustersCmd();
-    msg.thrust = 200.0;
+    msg.thrust = 8000.0;
 
     switch (c) {
-      case 'w': case 'W': msg.direction = "forward"; msg.thrust=200.0;break;
-      case 's': case 'S': msg.direction = "backward"; msg.thrust=-200.0;break;
+      case 'w': case 'W': msg.direction = "forward"; break;
+      case 's': case 'S': msg.direction = "backward"; break;
       case 'a': case 'A': msg.direction = "up"; break;
       case 'd': case 'D': msg.direction = "down"; break;
       case 'q': case 'Q': msg.direction = "yaw_left"; break;

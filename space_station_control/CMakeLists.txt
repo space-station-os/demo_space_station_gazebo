@@ -13,6 +13,7 @@ find_package(rosidl_default_generators REQUIRED)
 find_package(std_srvs REQUIRED)
 find_package(actionlib_msgs REQUIRED)
 find_package(visualization_msgs REQUIRED)
+find_package(actuator_msgs REQUIRED)
 
 # uncomment the following section in order to fill in
 # further dependencies manually.
@@ -26,7 +27,7 @@ set(msg_files
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   ${msg_files} 
-  DEPENDENCIES  std_msgs sensor_msgs visualization_msgs
+  DEPENDENCIES  std_msgs sensor_msgs visualization_msgs actuator_msgs
 )
 
 include_directories(include)

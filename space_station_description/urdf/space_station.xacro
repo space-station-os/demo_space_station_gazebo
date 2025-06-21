@@ -634,23 +634,23 @@
   </collision>
 </link>
 
-<joint name="xp_th_1" type="revolute">
+<joint name="xp_th_1" type="continuous">
   <origin xyz="2.007871 -10.0 2.495824" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="th2_1"/>
   <axis xyz="0.0 1.0 0.0"/>
-  <limit upper="0.0" lower="0.0" effort="100" velocity="100"/>
+  
 </joint>
 
-<joint name="xp_th_2" type="revolute">
+<joint name="xp_th_2" type="continuous">
   <origin xyz="2.020507 -10.0 -2.503833" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="th1_1"/>
   <axis xyz="0.0 1.0 0.0"/>
-  <limit upper="0.0" lower="0.0" effort="100" velocity="100"/>
+  
 </joint>
 
-<joint name="camera_b" type="revolute">
+<joint name="camera_b" type="fixed">
   <origin xyz="0.0 -10.1 3.15" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="camera_front_1"/>
@@ -658,12 +658,12 @@
   <limit upper="0.0" lower="0.0" effort="100" velocity="100"/>
 </joint>
 
-<joint name="xp_th_3" type="revolute">
+<joint name="xp_th_3" type="continuous">
   <origin xyz="-1.984128 -9.9 2.498452" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="th4_1"/>
   <axis xyz="0.0 -1.0 0.0"/>
-  <limit upper="0.0" lower="0.0" effort="100" velocity="100"/>
+  
 </joint>
 
 <joint name="docking_port_b" type="revolute">
@@ -674,20 +674,20 @@
   <limit upper="0.0" lower="0.0" effort="100" velocity="100"/>
 </joint>
 
-<joint name="xp_th_4" type="revolute">
+<joint name="xp_th_4" type="continuous">
   <origin xyz="-1.991465 -10.0 -2.509155" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="th3_1"/>
   <axis xyz="0.0 1.0 0.0"/>
-  <limit upper="0.0" lower="0.0" effort="100" velocity="100"/>
+  
 </joint>
 
-<joint name="yn_th_1" type="revolute">
+<joint name="yn_th_1" type="continuous">
   <origin xyz="4.5 -9.0 0.0" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="th9_1"/>
   <axis xyz="1.0 0.0 0.0"/>
-  <limit upper="0.0" lower="0.0" effort="100" velocity="100"/>
+  
 </joint>
 
 <joint name="rsa_1" type="continuous">
@@ -711,36 +711,36 @@
   <axis xyz="1.0 0.0 0.0"/>
 </joint>
 
-<joint name="yn_th_2" type="revolute">
+<joint name="yn_th_2" type="continuous">
   <origin xyz="4.5 9.0 0.0" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="th10_1"/>
   <axis xyz="1.0 0.0 0.0"/>
-  <limit upper="0.0" lower="0.0" effort="100" velocity="100"/>
+  
 </joint>
 
-<joint name="camera_r" type="revolute">
+<joint name="camera_r" type="fixed">
   <origin xyz="4.299176 -0.020923 1.144756" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="camera_right_1"/>
   <axis xyz="0.92388 0.0 0.382683"/>
-  <limit upper="0.0" lower="0.0" effort="100" velocity="100"/>
+  
 </joint>
 
-<joint name="zn_th_1" type="revolute">
+<joint name="zn_th_1" type="continuous">
   <origin xyz="-0.026882 -7.996277 4.4" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="th14_1"/>
   <axis xyz="0.0 0.0 -1.0"/>
-  <limit upper="0.0" lower="0.0" effort="100" velocity="100"/>
+  
 </joint>
 
-<joint name="zn_th_2" type="revolute">
+<joint name="zn_th_2" type="continuous">
   <origin xyz="0.0 8.0 4.4" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="th13_1"/>
   <axis xyz="0.0 0.0 -1.0"/>
-  <limit upper="0.0" lower="0.0" effort="100" velocity="100"/>
+  
 </joint>
 
 <joint name="canada_arm_ss_base" type="revolute">
@@ -751,12 +751,12 @@
   <limit upper="0.0" lower="0.0" effort="100" velocity="100"/>
 </joint>
 
-<joint name="yp_th_1" type="revolute">
+<joint name="yp_th_1" type="continuous">
   <origin xyz="-4.5 -9.0 0.0" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="th11_1"/>
   <axis xyz="-1.0 0.0 0.0"/>
-  <limit upper="0.0" lower="0.0" effort="100" velocity="100"/>
+  
 </joint>
 
 <joint name="lsa_1" type="continuous">
@@ -766,8 +766,8 @@
   <axis xyz="-1.0 0.0 0.0"/>
 </joint>
 
-<joint name="camera_l" type="revolute">
-  <origin xyz="-4.299176 -0.020923 1.144756" rpy="0 0 0"/>
+<joint name="camera_l" type="fixed">
+  <origin xyz="-4.299176 -0.020923 1.144756" rpy="0 0 3.14"/>
   <parent link="base_link"/>
   <child link="camera_left_1"/>
   <axis xyz="-0.92388 0.0 0.382683"/>
@@ -781,63 +781,63 @@
   <axis xyz="-1.0 0.0 0.0"/>
 </joint>
 
-<joint name="yp_th_2" type="revolute">
+<joint name="yp_th_2" type="continuous">
   <origin xyz="-4.5 9.0 0.0" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="th12_1"/>
   <axis xyz="-1.0 0.0 0.0"/>
-  <limit upper="0.0" lower="0.0" effort="100" velocity="100"/>
+  
 </joint>
 
-<joint name="lsa_3" type="revolute">
+<joint name="lsa_3" type="continuous">
   <origin xyz="-4.5 6.0 0.0" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="lsa_3_1"/>
   <axis xyz="-1.0 0.0 0.0"/>
-  <limit upper="0.0" lower="0.0" effort="100" velocity="100"/>
+  
 </joint>
 
-<joint name="zp_th_1" type="revolute">
+<joint name="zp_th_1" type="continuous">
   <origin xyz="0.00669 -7.997906 -4.4" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="th16_1"/>
   <axis xyz="0.0 0.0 1.0"/>
-  <limit upper="0.0" lower="0.0" effort="100" velocity="100"/>
+  
 </joint>
 
-<joint name="zp_th_2" type="revolute">
+<joint name="zp_th_2" type="continuous">
   <origin xyz="0.001241 8.003055 -4.4" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="th15_1"/>
   <axis xyz="0.0 0.0 1.0"/>
-  <limit upper="0.0" lower="0.0" effort="100" velocity="100"/>
+  
 </joint>
 
-<joint name="xn_th_1" type="revolute">
+<joint name="xn_th_1" type="continuous">
   <origin xyz="-2.0 10.0 2.5" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="th8_1"/>
   <axis xyz="0.0 -1.0 0.0"/>
-  <limit upper="0.0" lower="0.0" effort="100" velocity="100"/>
+  
 </joint>
 
-<joint name="xn_th_2" type="revolute">
+<joint name="xn_th_2" type="continuous">
   <origin xyz="-1.982378 10.0 -2.506934" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="th7_1"/>
   <axis xyz="0.0 -1.0 0.0"/>
-  <limit upper="0.0" lower="0.0" effort="100" velocity="100"/>
+  
 </joint>
 
-<joint name="xn_th_3" type="revolute">
+<joint name="xn_th_3" type="continuous">
   <origin xyz="2.000104 10.0 -2.503617" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="th6_1"/>
   <axis xyz="0.0 -1.0 0.0"/>
-  <limit upper="0.0" lower="0.0" effort="100" velocity="100"/>
+  
 </joint>
 
-<joint name="camera_f" type="continuous">
+<joint name="camera_f" type="fixed">
   <origin xyz="0.0 10.1 3.15" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="camera_back_1"/>

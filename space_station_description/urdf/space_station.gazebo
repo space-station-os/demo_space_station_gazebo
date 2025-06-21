@@ -225,9 +225,9 @@
       <joint_name>xp_th_1</joint_name>
       <thrust_coefficient>0.004</thrust_coefficient>
       <fluid_density>1000</fluid_density>
-      <propeller_diameter>0.2</propeller_diameter>
-      <max_thrust_cmd>70000</max_thrust_cmd>
-      <min_thrust_cmd>0</min_thrust_cmd>
+     <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>10000</max_thrust_cmd>
+      <min_thrust_cmd>100</min_thrust_cmd>
     </plugin>
   </gazebo>
 
@@ -236,9 +236,9 @@
       <joint_name>xp_th_2</joint_name>
       <thrust_coefficient>0.004</thrust_coefficient>
       <fluid_density>1000</fluid_density>
-      <propeller_diameter>0.2</propeller_diameter>
-      <max_thrust_cmd>70000</max_thrust_cmd>
-      <min_thrust_cmd>0</min_thrust_cmd>
+     <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>10000</max_thrust_cmd>
+      <min_thrust_cmd>100</min_thrust_cmd>
     </plugin>
   </gazebo>
 
@@ -247,9 +247,9 @@
       <joint_name>xp_th_3</joint_name>
       <thrust_coefficient>0.004</thrust_coefficient>
       <fluid_density>1000</fluid_density>
-      <propeller_diameter>0.2</propeller_diameter>
-      <max_thrust_cmd>70000</max_thrust_cmd>
-      <min_thrust_cmd>0</min_thrust_cmd>
+     <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>10000</max_thrust_cmd>
+      <min_thrust_cmd>100</min_thrust_cmd>
     </plugin>
   </gazebo>
 
@@ -258,9 +258,9 @@
       <joint_name>xp_th_4</joint_name>
       <thrust_coefficient>0.004</thrust_coefficient>
       <fluid_density>1000</fluid_density>
-      <propeller_diameter>0.2</propeller_diameter>
-      <max_thrust_cmd>70000</max_thrust_cmd>
-      <min_thrust_cmd>0</min_thrust_cmd>
+     <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>10000</max_thrust_cmd>
+      <min_thrust_cmd>100</min_thrust_cmd>
     </plugin>
   </gazebo>
 
@@ -270,9 +270,9 @@
       <joint_name>xn_th_1</joint_name>
       <thrust_coefficient>0.004</thrust_coefficient>
       <fluid_density>1000</fluid_density>
-      <propeller_diameter>0.2</propeller_diameter>
-      <max_thrust_cmd>70000</max_thrust_cmd>
-      <min_thrust_cmd>0</min_thrust_cmd>
+     <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>10000</max_thrust_cmd>
+      <min_thrust_cmd>100</min_thrust_cmd>
     </plugin>
   </gazebo>
 
@@ -281,9 +281,9 @@
       <joint_name>xn_th_2</joint_name>
       <thrust_coefficient>0.004</thrust_coefficient>
       <fluid_density>1000</fluid_density>
-      <propeller_diameter>0.2</propeller_diameter>
-      <max_thrust_cmd>70000</max_thrust_cmd>
-      <min_thrust_cmd>0</min_thrust_cmd>
+     <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>10000</max_thrust_cmd>
+      <min_thrust_cmd>100</min_thrust_cmd>
     </plugin>
   </gazebo>
 
@@ -292,9 +292,9 @@
       <joint_name>xn_th_3</joint_name>
       <thrust_coefficient>0.004</thrust_coefficient>
       <fluid_density>1000</fluid_density>
-      <propeller_diameter>0.2</propeller_diameter>
-      <max_thrust_cmd>70000</max_thrust_cmd>
-      <min_thrust_cmd>0</min_thrust_cmd>
+     <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>10000</max_thrust_cmd>
+      <min_thrust_cmd>100</min_thrust_cmd>
     </plugin>
   </gazebo>
 
@@ -303,9 +303,9 @@
       <joint_name>xn_th_4</joint_name>
       <thrust_coefficient>0.004</thrust_coefficient>
       <fluid_density>1000</fluid_density>
-      <propeller_diameter>0.2</propeller_diameter>
-      <max_thrust_cmd>70000</max_thrust_cmd>
-      <min_thrust_cmd>0</min_thrust_cmd>
+     <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>10000</max_thrust_cmd>
+      <min_thrust_cmd>100</min_thrust_cmd>
     </plugin>
   </gazebo>
 
@@ -315,9 +315,9 @@
       <joint_name>yp_th_1</joint_name>
       <thrust_coefficient>0.004</thrust_coefficient>
       <fluid_density>1000</fluid_density>
-      <propeller_diameter>0.2</propeller_diameter>
-      <max_thrust_cmd>70000</max_thrust_cmd>
-      <min_thrust_cmd>0</min_thrust_cmd>
+     <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>10000</max_thrust_cmd>
+      <min_thrust_cmd>100</min_thrust_cmd>
     </plugin>
   </gazebo>
 
@@ -326,9 +326,9 @@
       <joint_name>yp_th_2</joint_name>
       <thrust_coefficient>0.004</thrust_coefficient>
       <fluid_density>1000</fluid_density>
-      <propeller_diameter>0.2</propeller_diameter>
-      <max_thrust_cmd>70000</max_thrust_cmd>
-      <min_thrust_cmd>0</min_thrust_cmd>
+     <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>10000</max_thrust_cmd>
+      <min_thrust_cmd>100</min_thrust_cmd>
     </plugin>
   </gazebo>
 
@@ -338,9 +338,9 @@
       <joint_name>yn_th_1</joint_name>
       <thrust_coefficient>0.004</thrust_coefficient>
       <fluid_density>1000</fluid_density>
-      <propeller_diameter>0.2</propeller_diameter>
-      <max_thrust_cmd>70000</max_thrust_cmd>
-      <min_thrust_cmd>0</min_thrust_cmd>
+     <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>10000</max_thrust_cmd>
+      <min_thrust_cmd>100</min_thrust_cmd>
     </plugin>
   </gazebo>
 
@@ -349,9 +349,9 @@
       <joint_name>yn_th_2</joint_name>
       <thrust_coefficient>0.004</thrust_coefficient>
       <fluid_density>1000</fluid_density>
-      <propeller_diameter>0.2</propeller_diameter>
-      <max_thrust_cmd>70000</max_thrust_cmd>
-      <min_thrust_cmd>0</min_thrust_cmd>
+     <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>10000</max_thrust_cmd>
+      <min_thrust_cmd>100</min_thrust_cmd>
     </plugin>
   </gazebo>
 
@@ -361,9 +361,9 @@
       <joint_name>zp_th_1</joint_name>
       <thrust_coefficient>0.004</thrust_coefficient>
       <fluid_density>1000</fluid_density>
-      <propeller_diameter>0.2</propeller_diameter>
-      <max_thrust_cmd>70000</max_thrust_cmd>
-      <min_thrust_cmd>0</min_thrust_cmd>
+     <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>10000</max_thrust_cmd>
+      <min_thrust_cmd>100</min_thrust_cmd>
     </plugin>
   </gazebo>
 
@@ -372,9 +372,9 @@
       <joint_name>zp_th_2</joint_name>
       <thrust_coefficient>0.004</thrust_coefficient>
       <fluid_density>1000</fluid_density>
-      <propeller_diameter>0.2</propeller_diameter>
-      <max_thrust_cmd>70000</max_thrust_cmd>
-      <min_thrust_cmd>0</min_thrust_cmd>
+     <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>10000</max_thrust_cmd>
+      <min_thrust_cmd>100</min_thrust_cmd>
     </plugin>
   </gazebo>
 
@@ -384,9 +384,9 @@
       <joint_name>zn_th_1</joint_name>
       <thrust_coefficient>0.004</thrust_coefficient>
       <fluid_density>1000</fluid_density>
-      <propeller_diameter>0.2</propeller_diameter>
-      <max_thrust_cmd>70000</max_thrust_cmd>
-      <min_thrust_cmd>0</min_thrust_cmd>
+     <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>10000</max_thrust_cmd>
+      <min_thrust_cmd>100</min_thrust_cmd>
     </plugin>
   </gazebo>
 
@@ -395,9 +395,9 @@
       <joint_name>zn_th_2</joint_name>
       <thrust_coefficient>0.004</thrust_coefficient>
       <fluid_density>1000</fluid_density>
-      <propeller_diameter>0.2</propeller_diameter>
-      <max_thrust_cmd>70000</max_thrust_cmd>
-      <min_thrust_cmd>0</min_thrust_cmd>
+     <propeller_diameter>0.2</propeller_diameter>
+      <max_thrust_cmd>10000</max_thrust_cmd>
+      <min_thrust_cmd>100</min_thrust_cmd>
     </plugin>
   </gazebo>
 
@@ -449,87 +449,124 @@
 
   <!-- Camera Plugins -->
   <gazebo reference="camera_back_1">
-    <sensor name="front_camera" type="camera">
+    <sensor name="front_camera" type="rgbd_camera">
+      <pose>1.0 0 0 0 0 1.5708</pose>
       <camera>
-        <horizontal_fov>1.396</horizontal_fov>
+        <horizontal_fov>2.09</horizontal_fov>
         <image>
           <width>640</width>
           <height>480</height>
-          <format>R8G8B8</format>
         </image>
         <clip>
-          <near>0.1</near>
-          <far>150000</far>
+          <near>0.3</near>
+          <far>15000</far>
         </clip>
+        <optical_frame_id>camera_front_optical</optical_frame_id>
       </camera>
       <always_on>1</always_on>
-      <update_rate>60</update_rate>
+      <update_rate>15</update_rate>
       <visualize>true</visualize>
-      <topic>front_camera/image</topic>
+      <topic>front_camera</topic>
+      <gz_frame_id>camera_back_1</gz_frame_id>
     </sensor>
   </gazebo>
+
+
 
   <gazebo reference="camera_front_1">
-    <sensor name="back_camera" type="camera">
+    <sensor name="back_camera" type="rgbd_camera">
+    <pose>1.0 0 0 0 0 -1.5708</pose>
       <camera>
-        <horizontal_fov>1.396</horizontal_fov>
+        <horizontal_fov>2.09</horizontal_fov>
         <image>
           <width>640</width>
           <height>480</height>
-          <format>R8G8B8</format>
         </image>
         <clip>
-          <near>0.1</near>
-          <far>150000</far>
+          <near>0.3</near>
+          <far>15000</far>
         </clip>
+        <optical_frame_id>camera_back_optical</optical_frame_id>
       </camera>
       <always_on>1</always_on>
-      <update_rate>60</update_rate>
+      <update_rate>15</update_rate>
       <visualize>true</visualize>
-      <topic>back_camera/image</topic>
+      <topic>back_camera</topic>
+      <gz_frame_id>camera_front_1</gz_frame_id>
     </sensor>
   </gazebo>
+
 
   <gazebo reference="camera_right_1">
-    <sensor name="right_camera" type="camera">
+    <sensor name="right_camera" type="rgbd_camera">
       <camera>
-        <horizontal_fov>1.396</horizontal_fov>
+        <horizontal_fov>1.25</horizontal_fov>
         <image>
-          <width>640</width>
-          <height>480</height>
-          <format>R8G8B8</format>
+          <width>320</width>
+          <height>240</height>
         </image>
         <clip>
-          <near>0.1</near>
+          <near>0.3</near>
           <far>15000</far>
         </clip>
+        <optical_frame_id>camera_right_optical</optical_frame_id>
       </camera>
       <always_on>1</always_on>
-      <update_rate>60</update_rate>
+      <update_rate>15</update_rate>
       <visualize>true</visualize>
-      <topic>right_camera/image</topic>
+      <topic>right_camera</topic>
+      <gz_frame_id>camera_right_1</gz_frame_id>
     </sensor>
   </gazebo>
 
+
+
   <gazebo reference="camera_left_1">
-    <sensor name="left_camera" type="camera">
+    <sensor name="left_camera" type="rgbd_camera">
+      <pose>0 0 0 0 0 0</pose>
       <camera>
-        <horizontal_fov>1.396</horizontal_fov>
+        <horizontal_fov>2.09</horizontal_fov>
         <image>
           <width>640</width>
           <height>480</height>
-          <format>R8G8B8</format>
         </image>
         <clip>
-          <near>0.1</near>
+          <near>0.3</near>
           <far>15000</far>
         </clip>
+        <optical_frame_id>camera_left_optical</optical_frame_id>
       </camera>
       <always_on>1</always_on>
-      <update_rate>60</update_rate>
+      <update_rate>15</update_rate>
       <visualize>true</visualize>
-      <topic>left_camera/image</topic>
+      <topic>left_camera</topic>
+      <gz_frame_id>camera_left_1</gz_frame_id>
     </sensor>
   </gazebo>
+
+
+
+
+  <gazebo reference="base_link">
+    <sensor name="imu" type="imu">
+      <always_on>1</always_on>
+      <update_rate>50</update_rate>
+      <visualize>true</visualize>
+      <topic>imu</topic>
+      <enable_metrics>true</enable_metrics>
+      <gz_frame_id>base_link</gz_frame_id>
+    </sensor>
+  </gazebo>
+
+  <gazebo reference="base_link">
+    <sensor name="navsat" type="navsat">
+      <always_on>1</always_on>
+      <update_rate>1</update_rate>
+      <topic>navsat</topic>
+      <gz_frame_id>base_link</gz_frame_id>
+    </sensor>
+  </gazebo>
+
+
 
 </robot>
